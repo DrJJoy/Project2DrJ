@@ -1,5 +1,14 @@
-from constants import TEAMS, PLAYERS
+"""
+Basketball Stats Tool Project
 
+Build a console-based basketball team statistics tool
+to help you divide up a group of players into teams and then provide a team analysis.
+
+March 21, 2022
+Second Python Project
+"""
+
+from constants import TEAMS, PLAYERS
 import copy
 
 teams = copy.deepcopy(TEAMS)
@@ -11,7 +20,6 @@ def start():
     print("Here are your choices:")
     print("1: Display Team Stats")
     print("2: Quit")
-    
 
 def first_menu():
     selection = input("Enter An Option:  ")
@@ -26,12 +34,9 @@ def first_menu():
         select_team()
     elif(selection == "2"):
         print("Have a nice day!")
-        #break
     else:
         print("Please select 1 or 2.")
-        #continue
-    
-#Create a clean_data function
+
 def clean_constants():
     for player in players:
         player["height"] = player['height'].split()
@@ -90,9 +95,7 @@ def display_stats(team, team_name):
         print("\n", "Guardians:")
         print(", ".join(guardians))
         break
-      # print(input("Press Enter to continue."))
-               # first_menu()
-            
+
 if __name__ == "__main__":
     Panthers, Bandits, Warriors, teams_list = assign_players(*clean_constants())
     start()
